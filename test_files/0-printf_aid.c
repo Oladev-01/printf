@@ -35,9 +35,8 @@ int _printf_aid(const char *format, va_list ptr)
 						count++;
 						break;
 						default:
-						_putchar('%');
 						_putchar(format[i]);
-						count += 2;
+						count ++;
 				}
 	return (count);
 }
