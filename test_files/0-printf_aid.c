@@ -27,7 +27,7 @@ int _printf_aid(const char *format, va_list ptr)
 						string = "(nil)";
 						}
 						write(1, string, strlen(string));
-						count++;
+						count += strlen(string);
 						break;
 					case '%':
 						s = '%';
