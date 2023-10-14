@@ -24,7 +24,7 @@ int _printf_aid(const char *format, va_list ptr)
 						string = va_arg(ptr, str);
 					if (string == NULL)
 						{
-						string = "(nil)";
+						string = "(null)";
 						}
 						write(1, string, strlen(string));
 						count += strlen(string);
