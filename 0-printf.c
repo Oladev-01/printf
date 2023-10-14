@@ -9,10 +9,9 @@
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-
+	int count = 0;
+	int i = 0;
 	va_start(ptr, format);
-	int count = 0, i = 0;
-	str string;
 
 	if (*format)
 	{
