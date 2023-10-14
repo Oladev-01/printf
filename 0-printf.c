@@ -25,6 +25,12 @@ int _printf(const char *format, ...)
 			else
 			{
 				i++;
+				if (format[i] == '\0')
+				{
+					va_end(ptr);
+
+					return (-1);
+				}
 				count += _printf_aid(format + i, ptr);
 			}
 			i++;
