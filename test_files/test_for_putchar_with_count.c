@@ -10,5 +10,9 @@ int main()
     printf("\n%d\n", count);
     count = _printf("what%s", NULL);
     printf("\n%d\n", count);
+    count = _printf("what%d");
+    printf("\n%d\n", count);
+    count = _printf("what%");
+    printf("\n%d\n", count);
   
 }
