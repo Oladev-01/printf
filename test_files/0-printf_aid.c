@@ -20,11 +20,15 @@ int _printf_aid(const char *format, va_list ptr)
 						_putchar(c);
 						count++;
 						break;
+					case 'd':
+					int num = va_arg(ptr, int);
+						count += _printf_aid_1(num);
+							break;
 					case 's':
 						string = va_arg(ptr, str);
 					if (string == NULL)
 						{
-						string = "(nil)";
+						string = "(null)";
 						}
 						write(1, string, strlen(string));
 						count += strlen(string);
