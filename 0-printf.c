@@ -12,6 +12,11 @@ int _printf(const char *format, ...)
 	int count = 0, i = 0;
 
 	va_start(ptr, format);
+	if (format == NULL)
+	{
+		va_end(ptr);
+		return (-1);
+	}
 
 	if (*format)
 	{

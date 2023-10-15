@@ -9,10 +9,14 @@
 int _printf(const char *format, ...)
 {
 	va_list ptr;
+	int count = 0, i = 0;
 
 	va_start(ptr, format);
-	int count = 0, i = 0;
-	str string;
+	if (format == NULL)
+	{
+		va_end(ptr);
+		return (-1);
+	}
 
 	if (*format)
 	{
@@ -29,6 +33,7 @@ int _printf(const char *format, ...)
 				if (format[i] == '\0')
 				{
 					va_end(ptr);
+
 					return (-1);
 				}
 				count += _printf_aid(format + i, ptr);
