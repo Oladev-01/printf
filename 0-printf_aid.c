@@ -10,6 +10,7 @@
 int _printf_aid(const char *format, va_list ptr)
 {
 	int count = 0, i = 0, num;
+	int num_1;
 	char s, c;
 	str string;
 
@@ -23,6 +24,10 @@ int _printf_aid(const char *format, va_list ptr)
 					case 'd':
 					num = va_arg(ptr, int);
 						count += _printf_aid_1(num);
+							break;
+					case 'i':
+							num_1 = va_arg(ptr, int);
+							count += _printf_aid_1(num_1);
 							break;
 					case 's':
 						string = va_arg(ptr, str);
