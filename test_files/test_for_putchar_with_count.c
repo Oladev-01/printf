@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	unsigned int num = -98;
+	unsigned int num = -980000;
 
 	int len = _printf("Percent %c\n", 'H');
 	int len2 = printf("Percent:[%%]\n");

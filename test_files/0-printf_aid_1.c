@@ -21,12 +21,11 @@ int print_integer(int n)
 			temp /= 10;
 			num_chars++;
 		}
-		num_str = NULL;
 		num_str = malloc(num_chars + 2);
 
 		if (num_str == NULL)
 			return (-1);
-		snprintf(num_str, num_chars + 2, "%d", n);
+		snprintf(num_str, num_chars + 1, "%d", n);
 
 		for (i = 0; i < num_chars; i++)
 		{

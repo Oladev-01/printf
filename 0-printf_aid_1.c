@@ -26,7 +26,7 @@ int print_integer(int n)
 
 		if (num_str == NULL)
 			return (-1);
-		snprintf(num_str, num_chars + 2, "%d", n);
+		snprintf(num_str, num_chars + 1, "%d", n);
 
 		for (i = 0; i < num_chars; i++)
 		{
