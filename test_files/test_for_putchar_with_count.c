@@ -1,20 +1,18 @@
-#include <stdio.h>
 #include "main.h"
-int main()
+
+int main(void)
 {
-	int num = 465738;
-	
-	int len = _printf("Let's try to printf a simple sentence.\n");
-	_printf("Length:[%d, %i]\n", len, len);
-	len = _printf(NULL);
-	_printf("Length:[%d, %i]\n", len, len);
-	len = _printf("%d", num);
-	_printf("\nLength:[%d, %i]\n", len, len);
-	len = _printf("Character:[%c]\n", 'H');
-	_printf("Length:[%d, %i]\n", len, len);
-	len = _printf("String:[%s]\n", "I am a string !");
-	_printf("Length:[%d, %i]\n", len, len);
-	len = _printf("this%v");
-	_printf("\nLength:[%d, %i]\n", len, len);
+	unsigned int num = 98;
+
+	int len = _printf("Percent %c\n", 'H');
+	int len2 = printf("Percent:[%%]\n");
+
+	_printf("Len:[%d]\n", len);
+	printf("Len:[%d]\n", len2);
+	len = _printf("%d and %i", -23, -24567);
+	printf("\n%d\n", len);
+	len = _printf("%b", num);
+	_printf("\n%d\n", len);
 	return (0);
+
 }

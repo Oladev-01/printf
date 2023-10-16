@@ -9,8 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int count = 0;
-	int i = 0;
+	int count;
 
 	va_start(ptr, format);
 	if (format == NULL)
@@ -18,6 +17,21 @@ int _printf(const char *format, ...)
 		va_end(ptr);
 		return (-1);
 	}
+	count = refactor_printf(format, ptr);
+	va_end(ptr);
+	return (count);
+}
+
+/**
+ * refactor_printf - wrote this function because betty was disturbing me
+ * @format: string to be parsed
+ * @ptr: initialiazer or pointer to format and respective arguments
+ * Return: count of the fucntion i.e the number of characters printed
+ */
+int refactor_printf(const char *format, va_list ptr)
+{
+	int count = 0, i = 0;
+
 	while (format[i])
 	{
 		if (format[i] != '%')
@@ -37,6 +51,8 @@ int _printf(const char *format, ...)
 				count += _printf_aid_1(format + i, ptr);
 			else if (format[i] == 'c' || format[i] == 's' || format[i] == '%')
 				count += _printf_aid(format + i, ptr);
+			else if (format[i] == 'b')
+				count += _printf_aid_2(format + i, ptr);
 			else
 			{
 				_putchar('%');
@@ -46,7 +62,5 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	va_end(ptr);
 	return (count);
 }
-
