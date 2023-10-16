@@ -21,7 +21,7 @@ int print_integer(int n)
 			temp /= 10;
 			num_chars++;
 		}
-		num_str = malloc(num_chars + 2);
+		num_str = malloc(num_chars + 1);
 
 		if (num_str == NULL)
 			return (-1);

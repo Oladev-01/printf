@@ -28,7 +28,7 @@ int print_integer(int n)
 			return (-1);
 		snprintf(num_str, num_chars + 1, "%d", n);
 
-		for (i = 0; i < num_chars; i++)
+		for (i = 0; i < num_chars + 1; i++)
 		{
 			_putchar(num_str[i]);
 			count++;
