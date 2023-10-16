@@ -50,11 +50,7 @@ int _printf_aid_2(const char *format, va_list ptr)
 	if (format && format[0] == 'b')
 	{
 		unsigned int n = va_arg(ptr, unsigned int);
-	if ((int)n < 0)
-	{
-		_putchar('-');
-		n *= -1;
-	}
+
 		count += print_binary(n);
 	}
 	else
