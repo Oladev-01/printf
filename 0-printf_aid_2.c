@@ -52,8 +52,8 @@ int _printf_aid_2(const char *format, va_list ptr)
 		unsigned int n = va_arg(ptr, unsigned int);
 	if ((int)n < 0)
 	{
-		_printf("Error\n");
-		return (-1);
+		_putchar('-');
+		n *= -1;
 	}
 		count += print_binary(n);
 	}
