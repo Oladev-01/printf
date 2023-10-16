@@ -16,12 +16,6 @@ int print_integer(int n)
 	}
 	else
 	{
-		if (n < 0)
-		{
-			_putchar('-');
-			temp *= -1;
-			count++;
-		}
 		while (temp != 0)
 		{
 			temp /= 10;
