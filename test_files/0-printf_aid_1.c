@@ -32,8 +32,8 @@ int print_integer(int n)
 			_putchar(num_str[i]);
 			count++;
 		}
-		free(num_str);
 	}
+	free(num_str);
 	return (count);
 }
 
