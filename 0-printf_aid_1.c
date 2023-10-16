@@ -6,8 +6,8 @@
  */
 int print_integer(int n)
 {
-	int count = 0, i, temp = n, num_chars = 0;
-	str num_str;
+	int count = 0, i = 0;
+	int hold_int[32];
 
 	if (n == 0)
 	{
@@ -16,25 +16,20 @@ int print_integer(int n)
 	}
 	else
 	{
-		while (temp != 0)
+		while (n != 0)
 		{
-			temp /= 10;
-			num_chars++;
+			hold_int[i] = n % 10;
+			n /= 10;
+			i++;
 		}
-
-		num_str = malloc(num_chars + 2);
-
-		if (num_str == NULL)
-			return (-1);
-		snprintf(num_str, num_chars + 1, "%d", n);
-
-		for (i = 0; i < num_chars; i++)
+		i--;
+		while (i >= 0)
 		{
-			_putchar(num_str[i]);
+			_putchar(hold_int[i] + '0');
 			count++;
+			i--;
 		}
 	}
-	free(num_str);
 	return (count);
 }
 
