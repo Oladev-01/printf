@@ -9,7 +9,8 @@
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int count = 0, i = 0;
+	int count = 0;
+	int i = 0;
 
 	va_start(ptr, format);
 	if (format == NULL)
@@ -17,30 +18,35 @@ int _printf(const char *format, ...)
 		va_end(ptr);
 		return (-1);
 	}
-
-	if (*format)
+	while (format[i])
 	{
-		while (format[i])
+		if (format[i] != '%')
 		{
-			if (format[i] != '%')
+			_putchar(format[i]);
+			count++;
+		}
+		else
+		{
+			i++;
+			if (format[i] == '\0')
 			{
-				_putchar(format[i]);
-				count++;
+				va_end(ptr);
+				return (-1);
 			}
+			if (format[i] == 'd' || format[i] == 'i')
+				count += _printf_aid_1(format + i, ptr);
+			else if (format[i] == 'c' || format[i] == 's' || format[i] == '%')
+				count += _printf_aid(format + i, ptr);
 			else
 			{
-				i++;
-				if (format[i] == '\0')
-				{
-					va_end(ptr);
-
-					return (-1);
-				}
-				count += _printf_aid(format + i, ptr);
+				_putchar('%');
+				_putchar(format[i]);
+				count += 2;
 			}
-			i++;
 		}
+		i++;
 	}
 	va_end(ptr);
 	return (count);
 }
+

@@ -20,10 +20,6 @@ int _printf_aid(const char *format, va_list ptr)
 						_putchar(c);
 						count++;
 						break;
-					case 'd':
-					int num = va_arg(ptr, int);
-						count += _printf_aid_1(num);
-							break;
 					case 's':
 						string = va_arg(ptr, str);
 					if (string == NULL)
@@ -38,10 +34,6 @@ int _printf_aid(const char *format, va_list ptr)
 						_putchar(s);
 						count++;
 						break;
-						default:
-						_putchar('%');
-						_putchar(format[i]);
-						count += 2;
 				}
 	return (count);
 }

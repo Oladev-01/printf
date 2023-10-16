@@ -9,8 +9,7 @@
  */
 int _printf_aid(const char *format, va_list ptr)
 {
-	int count = 0, i = 0, num;
-	int num_1;
+	int count = 0, i = 0;
 	char s, c;
 	str string;
 
@@ -21,14 +20,6 @@ int _printf_aid(const char *format, va_list ptr)
 						_putchar(c);
 						count++;
 						break;
-					case 'd':
-					num = va_arg(ptr, int);
-						count += _printf_aid_1(num);
-							break;
-					case 'i':
-							num_1 = va_arg(ptr, int);
-							count += _printf_aid_1(num_1);
-							break;
 					case 's':
 						string = va_arg(ptr, str);
 					if (string == NULL)
@@ -43,10 +34,6 @@ int _printf_aid(const char *format, va_list ptr)
 						_putchar(s);
 						count++;
 						break;
-						default:
-						_putchar('%');
-						_putchar(format[i]);
-						count += 2;
 				}
 	return (count);
 }
