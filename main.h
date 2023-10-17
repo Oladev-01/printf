@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <unistd.h>
 int _putchar(char c);

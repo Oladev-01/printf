@@ -47,6 +47,12 @@ int _printf_aid_1(const char *format, va_list ptr)
 	{
 		int n = va_arg(ptr, int);
 
+		if (n == INT_MIN)
+		{
+			_putchar('-');
+			n = -(n + 1);
+			count++;
+		}
 		if (n < 0)
 		{
 			_putchar('-');
