@@ -16,10 +16,13 @@ int print_integer(int n);
 int print_binary(unsigned int n);
 int _printf_aid_2(const char *format, va_list ptr);
 int refactor_printf(const char *format, va_list ptr);
+int refactor_printf_2(const char *format, va_list ptr);
 int ret_uns(unsigned int num);
 int handle_uns(const char *format, va_list ptr);
 int hex_lower(const char *format, va_list ptr);
 int conv_hex_lower(unsigned int num);
+int hex_upper(const char *format, va_list ptr);
+int conv_hex_upper(unsigned int num);
 typedef char *str;
 
 

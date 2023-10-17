@@ -29,12 +29,13 @@ int hex_lower(const char *format, va_list ptr)
  * conv_hex_lower - this function handles the logic
  *for the conversion to hexadecmal in lowercase
  *@num: this is the number to be converted
+ *str - this is the typedef for char *
  *Return: the count of the numbers printed after conversion
  */
 int conv_hex_lower(unsigned int num)
 {
 	int count = 0, i = 0, hold[64];
-	char *str = "0123456789abcdef";
+	str hex = "0123456789abcdef";
 
 	if (num == 0)
 	{
@@ -45,7 +46,7 @@ int conv_hex_lower(unsigned int num)
 	{
 		while (num != 0)
 		{
-			hold[i] = str[num % 16];
+			hold[i] = hex[num % 16];
 			num /= 16;
 			i++;
 		}

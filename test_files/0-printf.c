@@ -53,12 +53,10 @@ int refactor_printf(const char *format, va_list ptr)
 				count += _printf_aid(format + i, ptr);
 			else if (format[i] == 'b')
 				count += _printf_aid_2(format + i, ptr);
-			else if (format[i] == 'u')
-				count += handle_uns(format + i, ptr);
-			else if (format[i] == 'o')
-				count += octal(format + i, ptr);
-			else if (format[i] == 'x')
-				count += hex_lower(format + i, ptr);
+			else if (format[i] == 'u' || format[i] == 'o')
+				count += refactor_printf_2(format + i, ptr);
+			else if (format[i] == 'x' || format[i] == 'X')
+				count += refactor_printf_2(format + i, ptr);
 			else
 			{
 				_putchar('%');
@@ -69,4 +67,27 @@ int refactor_printf(const char *format, va_list ptr)
 		i++;
 	}
 	return (count);
+}
+
+/**
+ * refactor_printf_2 - this function supports refactor_printf
+ * @format: this string contains any of the format specifier in the function
+ * @ptr: initializer to the string and any of the argument matching
+ * any of the format specifier
+ *Return: count of the string printed
+ */
+int refactor_printf_2(const char *format, va_list ptr)
+{
+	int count = 0, i = 0;
+
+			if (format[i] == 'u')
+				count += handle_uns(format + i, ptr);
+			else if (format[i] == 'o')
+				count += octal(format + i, ptr);
+			else if (format[i] == 'x')
+				count += hex_lower(format + i, ptr);
+			else if (format[i] == 'X')
+				count += hex_upper(format + i, ptr);
+
+			return (count);
 }
