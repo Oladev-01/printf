@@ -18,6 +18,8 @@ int _printf_aid_2(const char *format, va_list ptr);
 int refactor_printf(const char *format, va_list ptr);
 int ret_uns(unsigned int num);
 int handle_uns(const char *format, va_list ptr);
+int hex_lower(const char *format, va_list ptr);
+int conv_hex_lower(unsigned int num);
 typedef char *str;
 
 

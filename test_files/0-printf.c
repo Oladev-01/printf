@@ -57,6 +57,8 @@ int refactor_printf(const char *format, va_list ptr)
 				count += handle_uns(format + i, ptr);
 			else if (format[i] == 'o')
 				count += octal(format + i, ptr);
+			else if (format[i] == 'x')
+				count += hex_lower(format + i, ptr);
 			else
 			{
 				_putchar('%');

@@ -11,6 +11,10 @@ int main(void)
 	_printf("\n%d\n", len);
 	len = printf("what %o", 88);
 	printf("\n%d\n", len);
+	len = _printf("what %x", -158);
+	_printf("\n%d\n", len);
+	printf("what %x", -158);
+	printf("\n%d\n", len);
 
 	return (0);
 }
