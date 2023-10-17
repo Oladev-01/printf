@@ -55,6 +55,8 @@ int refactor_printf(const char *format, va_list ptr)
 				count += _printf_aid_2(format + i, ptr);
 			else if (format[i] == 'u')
 				count += handle_uns(format + i, ptr);
+			else if (format[i] == 'o')
+				count += octal(format + i, ptr);
 			else
 			{
 				_putchar('%');

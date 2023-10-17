@@ -7,7 +7,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 int _printf(const char *format, ...);
-
+int conv_octal(unsigned int);
+int octal(const char *format, va_list ptr);
 int _putchar(char c);
 int _printf_aid(const char *format, va_list ptr);
 int _printf_aid_1(const char *format, va_list ptr);
