@@ -19,6 +19,12 @@ int main(void)
 	_printf("\n%d\n", len);
 	len = printf("what %X", -255);
 	printf("\n%d\n", len);
+	len = _printf("%S", "Best\bSchool");
+	_printf("\n%d\n", len);
+	len = _printf("i%S", NULL);
+	_printf("\n%d\n", len);
+
+
 
 	return (0);
 }

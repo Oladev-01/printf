@@ -23,6 +23,8 @@ int hex_lower(const char *format, va_list ptr);
 int conv_hex_lower(unsigned int num);
 int hex_upper(const char *format, va_list ptr);
 int conv_hex_upper(unsigned int num);
+int check_for_non_print(const char *format, va_list ptr);
+int non_print(char *s);
 typedef char *str;
 
 
