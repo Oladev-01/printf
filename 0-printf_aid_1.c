@@ -50,8 +50,8 @@ int _printf_aid_1(const char *format, va_list ptr)
 		if (n == INT_MIN)
 		{
 			_putchar('-');
-			n = -(n + 1);
 			count++;
+			count += print_integer(-(n + 1));
 		}
 		if (n < 0)
 		{
