@@ -57,6 +57,8 @@ int refactor_printf(const char *format, va_list ptr)
 				count += refactor_printf_2(format + i, ptr);
 			else if (format[i] == 'x' || format[i] == 'X' || format[i] == 'S')
 				count += refactor_printf_2(format + i, ptr);
+			else if (format[i] == 'p')
+				count += refactor_printf_2(format + i, ptr);
 			else
 			{
 				_putchar('%');
@@ -90,6 +92,8 @@ int refactor_printf_2(const char *format, va_list ptr)
 				count += hex_upper(format + i, ptr);
 			else if (format[i] == 'S')
 				count += check_for_non_print(format + i, ptr);
+			else if (format[i] == 'p')
+				count += address(format + i, ptr);
 
 			return (count);
 }
