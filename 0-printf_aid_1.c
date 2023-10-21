@@ -45,7 +45,7 @@ int _printf_aid_1(const char *format, va_list ptr)
 
 	if (format && (format[0] == 'd' || format[0] == 'i'))
 	{
-		long int n = va_arg(ptr, long int);
+		long int n = va_arg(ptr, int);
 
 		if (n < 0)
 		{

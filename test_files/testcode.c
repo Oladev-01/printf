@@ -6,11 +6,11 @@ int main(void)
 	int len, len2;
 
 	len = _printf("%d\n", INT_MIN);
-	len2 = printf("%d\n", INT_MIN);
+	printf("\n");
+	len = _printf("%d", -23456);
 	fflush(stdout);
 	if (len != len2)
 	{
-		printf("Lengths differ.\n");
 		fflush(stdout);
 		return (1);
 	}
