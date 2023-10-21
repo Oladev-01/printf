@@ -1,9 +1,6 @@
-#include <stdio.h>
+#include "main.h"
 int main()
 {
-    int num = 100;
-    int *p = &num;
-    int len = printf("what %p", p);
-    printf("\n%d\n", len);
+    int len = _printf("what %s\n", "the");
     return (0);
 }

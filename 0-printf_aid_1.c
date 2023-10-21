@@ -4,10 +4,10 @@
  * @n: The integer to print
  * Return: The number of characters printed
  */
-int print_integer(int n)
+int print_integer(long int n)
 {
 	int count = 0, i = 0;
-	int hold_int[32];
+	long int hold_int[32];
 
 	if (n == 0)
 	{
@@ -45,13 +45,8 @@ int _printf_aid_1(const char *format, va_list ptr)
 
 	if (format && (format[0] == 'd' || format[0] == 'i'))
 	{
-		int n = va_arg(ptr, int);
+		long int n = va_arg(ptr, long int);
 
-		if (n == INT_MIN)
-		{
-			_putchar('-');
-			count += print_integer(-(n + 1));
-		}
 		if (n < 0)
 		{
 			_putchar('-');

@@ -42,23 +42,23 @@ int print_integer(int n)
 int _printf_aid_1(const char *format, va_list ptr)
 {
 	int count = 0;
-	int n = va_arg(ptr, int);
-	
+
 	if (format && (format[0] == 'd' || format[0] == 'i'))
 	{
+		int n = va_arg(ptr, int);
 
-		if (n == INT_MIN)
-		{
-			_putchar('-');
-			count++;
-			n = -(n + 1) ;
-		}
 		if (n < 0)
 		{
 			_putchar('-');
 			n = -n;
 			count++;
 		}
+	if (n == INT_MIN)
+	{
+		_putchar('-');
+		n = -(n + 1);
+		count++;
+	}
 
 		count += print_integer(n);
 	}
