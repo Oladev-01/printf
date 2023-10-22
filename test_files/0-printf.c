@@ -48,7 +48,7 @@ int refactor_printf(const char *format, va_list ptr)
 				return (-1);
 			}
 			if (format[i] == 'd' || format[i] == 'i')
-				count += conv_int(format + i, ptr);
+				count += _printf_aid_1(format + i, ptr);
 			else if (format[i] == 'c' || format[i] == 's' || format[i] == '%')
 				count += _printf_aid(format + i, ptr);
 			else if (format[i] == 'b')

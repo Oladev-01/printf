@@ -1,16 +1,19 @@
 #include "main.h"
-#include <limits.h>
+
 
 int main(void)
 {
 	int len, len2;
+	void *p = (void *)0x7fff5100b608;
 
-	len = _printf("%d\n", INT_MIN);
+	len = _printf("%p", p);
 	printf("\n");
-	len = _printf("%d", -23456);
+	len2 = printf("%p", p);
+	printf("\n");
 	fflush(stdout);
 	if (len != len2)
 	{
+		printf("Lengths differ.\n");
 		fflush(stdout);
 		return (1);
 	}

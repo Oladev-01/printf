@@ -16,8 +16,8 @@ int address(const char *format, va_list ptr)
 
 		if (pts == NULL)
 		{
-			write(1, "(null)", 6);
-			count += 6;
+			write(1, "(nil)", 5);
+			count += 5;
 			return (count);
 		}
 		count += find_address(ptr);
@@ -38,7 +38,7 @@ int address(const char *format, va_list ptr)
  */
 int find_address(void *pts)
 {
-	int count = 0, i = 0;
+	int count = 0;
 	char hold[64];
 
 	snprintf(hold, sizeof(hold), "%p", pts);

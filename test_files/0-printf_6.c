@@ -43,7 +43,7 @@ int check_for_non_print(const char *format, va_list ptr)
 int non_print(char *s)
 {
 	int count = 0, i = 0, a;
-	char hex[4];
+	char hex[3];
 
 	while (s[i] != '\0')
 	{

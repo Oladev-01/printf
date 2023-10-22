@@ -1,46 +1,66 @@
 #include "main.h"
-
-int conv_int(const char *format, va_list ptr)
+/**
+ * print_integer - Print an integer to the standard output
+ * @n: The integer to print
+ * Return: The number of characters printed
+ */
+int print_integer(long int n)
 {
-	int count = 0;
-	long int num;
+	int count = 0, i = 0;
+	long int hold_int[32];
 
-	if (*format && format[0] == 'd' || *format && format[0] == 'i')
+	if (n == 0)
 	{
-		num = va_arg(ptr, long int);
-		count += ret_int(num);
+		_putchar('0');
+		count++;
+	}
+	else
+	{
+		while (n != 0)
+		{
+			hold_int[i] = n % 10;
+			n /= 10;
+			i++;
+		}
+		i--;
+		while (i >= 0)
+		{
+			_putchar(hold_int[i] + '0');
+			count++;
+			i--;
+		}
 	}
 	return (count);
 }
 
-int ret_int(long int num)
+/**
+ * _printf_aid_1 - handles the logic for %d and %i
+ * @format: the format specifier string
+ * @ptr: a va_list containing the arguments
+ * Return: count of characters printed
+ */
+int _printf_aid_1(const char *format, va_list ptr)
 {
-	int count = 0, i = 0;
-	long int hold[64];
+	int count = 0;
 
-	if (num < 0) // num = -102
+	if (format && (format[0] == 'd' || format[0] == 'i'))
 	{
-		_putchar('-'); // prints minus ('-')
-		num *= -1; // -102 * -1 = 102;
-		count++;
+		long int n = va_arg(ptr, int);
+
+		if (n < 0)
+		{
+			_putchar('-');
+			n = -n;
+			count++;
+		}
+
+		count += print_integer(n);
 	}
-	if (num == 0) // num = 0
+	else
 	{
-		putchar('0'); // prints 0
-		count++; // count += 1
-	}
-	while (num != 0) // assuming num == 102
-	{
-		hold[i] = num % 10; // num % 10 = 101 % 10 = 2
-		num /= 10; // num / 10 = 102 / 10 = 10
-		i++; // increment i which is the index to the next index
-	}
-	i--;
-	while (i >= 0)
-	{
-		putchar(hold[i] + '0'); // -102
-		count++;
-		i--;
+		_putchar('%');
+		_putchar(format[0]);
+		count += 2;
 	}
 	return (count);
 }

@@ -57,6 +57,6 @@ int conv_hex_lower(unsigned int num)
 			count++;
 			i--;
 		}
-		return (count);
 	}
+	return (count);
 }
