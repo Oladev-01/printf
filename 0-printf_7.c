@@ -12,7 +12,7 @@ int address(const char *format, va_list ptr)
 
 	if (*format && format[0] == 'p')
 	{
-		void *pts = va_arg(ptr, void *);
+		int *pts = va_arg(ptr, void *);
 
 		if (pts == NULL)
 		{
@@ -20,7 +20,7 @@ int address(const char *format, va_list ptr)
 			count += 5;
 			return (count);
 		}
-		count += find_address(ptr);
+		count += find_address(pts);
 	}
 	else
 	{
