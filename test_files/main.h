@@ -27,6 +27,7 @@ int check_for_non_print(const char *format, va_list ptr);
 int address(const char *format, va_list ptr);
 int find_address(void *pts);
 int non_print(char *s);
+int rev(const char *format, va_list ptr);
 typedef char *str;
 
 

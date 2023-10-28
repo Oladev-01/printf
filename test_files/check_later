@@ -1,0 +1,19 @@
+#include "main.h"
+/**
+ *
+ *
+ *
+ */
+int check_for_flags(const char *format, va_list ptr)
+{
+    int count = 0, i = 0;
+
+    if (*format && format[i] == '+')
+    {
+        i++;
+        if (format[i] == 'd' || format[i] == 'i')
+        {
+            
+        }
+    }
+}
