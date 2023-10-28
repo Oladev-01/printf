@@ -26,7 +26,7 @@ int Rot_13_str(const char *format, va_list ptr)
 		while (rot_str[a] != '\0')
 		{
 			c = rot_str[a];
-			if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z')
+			if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 			{
 				base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
 				c = (((c - base) + 13) % 26) + base;
