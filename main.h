@@ -28,6 +28,7 @@ int address(const char *format, va_list ptr);
 int find_address(void *pts);
 int non_print(char *s);
 int rev(const char *format, va_list ptr);
+int Rot_13_str(const char *format, va_list ptr);
 typedef char *str;
 
 
