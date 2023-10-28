@@ -57,7 +57,7 @@ int refactor_printf(const char *format, va_list ptr)
 				count += refactor_printf_2(format + i, ptr);
 			else if (format[i] == 'x' || format[i] == 'X' || format[i] == 'S')
 				count += refactor_printf_2(format + i, ptr);
-			else if (format[i] == 'p' || format[i] == 'r')
+			else if (format[i] == 'p' || format[i] == 'r' || format[i] == 'R')
 				count += refactor_printf_2(format + i, ptr);
 			else
 			{
@@ -96,5 +96,7 @@ int refactor_printf_2(const char *format, va_list ptr)
 				count += address(format + i, ptr);
 			else if (format[i] == 'r')
 				count += rev(format + i, ptr);
+			else if (format[i] == 'R')
+				count += Rot_13_str(format + i, ptr);
 			return (count);
 }

@@ -7,5 +7,9 @@ int main(void)
 	printf("\n%d\n", len);
 	len = _printf("what %r", "string");
 	printf("\n%d\n", len);
+	len = _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
+	printf("\n%d\n", len);
+	len = _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "know");
+	printf("\n%d\n", len);
 	return (0);
 }
